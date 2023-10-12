@@ -2,7 +2,7 @@ import axios from "axios"
 
 function Gmail() {
     const sendGmail = async () => {
-        await axios.post('http://localhost:3001/send', {
+        await axios.post('https://privacypolicybackend-production.up.railway.app/send', {
             gmail: "yulianaroman376@gmail.com",
             name: "Yuli",
         });

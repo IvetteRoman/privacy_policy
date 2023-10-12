@@ -11,7 +11,7 @@ function User() {
     const { id } = useParams();
 
     useEffect(() => {
-        axios.get(`http://localhost:3001/user/${id}`)
+        axios.get(`https://privacypolicybackend-production.up.railway.app/user/${id}`)
             .then((response) => {
                 const userData = response.data;
                 setUser(userData);
@@ -22,7 +22,7 @@ function User() {
     }, [id]);
 
     useEffect(() => {
-        axios.get(`http://localhost:3001/verify/${id}`)
+        axios.get(`https://privacypolicybackend-production.up.railway.app/verify/${id}`)
             .then((response) => {
                 const userData = response.data;
                 setVerify(userData);
@@ -51,9 +51,9 @@ function User() {
 
         try {
             if (accept) {
-                await axios.post('http://localhost:3001/accept', values);
+                await axios.post('https://privacypolicybackend-production.up.railway.app/accept', values);
             } else {
-                await axios.post('http://localhost:3001/refuse', values);
+                await axios.post('https://privacypolicybackend-production.up.railway.app/refuse', values);
             }
             // Recargar la página después de confirmar
             window.location.reload();
